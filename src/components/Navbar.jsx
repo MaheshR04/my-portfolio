@@ -1,12 +1,13 @@
 export default function Navbar() {
-  const menu = ["Home", "Skills", "Experience", "Projects", "Contact"];
+  // ✅ Correct order
+  const menu = ["Home", "Skills", "Projects", "Experience", "Contact"];
 
   const colors = [
-    "bg-blue-500",
-    "bg-pink-500",
-    "bg-green-500",
-    "bg-purple-500",
-    "bg-yellow-500",
+    "bg-blue-500",     // Home
+    "bg-pink-500",     // Skills
+    "bg-purple-500",   // Projects
+    "bg-green-500",    // Experience
+    "bg-yellow-500",   // Contact
   ];
 
   return (
@@ -48,7 +49,7 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* 👉 GET RESUME BUTTON */}
+          {/* GET RESUME BUTTON */}
           <a
             href="/Resume.pdf"
             download
