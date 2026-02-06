@@ -1,5 +1,5 @@
 export default function Navbar() {
-  // ✅ Correct order
+  
   const menu = ["Home", "Skills", "Projects", "Experience", "Contact"];
 
   const colors = [
