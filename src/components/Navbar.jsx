@@ -49,10 +49,11 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* GET RESUME BUTTON */}
+          {/* SEE RESUME BUTTON */}
           <a
             href="/Resume.pdf"
-            download
+            target="_blank"
+            rel="noopener noreferrer"
             className="
               ml-2
               px-5 py-2
@@ -63,9 +64,10 @@ export default function Navbar() {
               text-sm
               font-semibold
               transition
+              hover:scale-110 hover:shadow-lg
             "
           >
-            Get Resume
+            See Resume
           </a>
         </div>
 
