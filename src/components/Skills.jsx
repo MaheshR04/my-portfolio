@@ -24,45 +24,45 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="min-h-screen bg-[#020617] py-24"
+      className="min-h-screen bg-[#020617] py-16 sm:py-24"
     >
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
 
         {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-blue-400">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-blue-400">
           Skills
         </h2>
-        <p className="text-center text-gray-400 mt-4 max-w-2xl mx-auto">
+        <p className="text-center text-gray-400 mt-3 sm:mt-4 max-w-2xl mx-auto text-sm sm:text-base">
           Technologies I use to build fast, scalable, and modern web applications.
         </p>
 
         {/* Timeline */}
-        <div className="relative mt-20">
+        <div className="relative mt-12 sm:mt-20">
           {/* Vertical Line */}
           <div className="hidden md:block absolute left-1/2 top-0 h-full w-[2px] bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500"></div>
 
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {skills.map((skill, index) => (
               <div
                 key={skill.name}
-                className={`flex flex-col md:flex-row items-center gap-6 ${
+                className={`flex flex-col md:flex-row items-center gap-4 sm:gap-6 ${
                   index % 2 === 0 ? "md:flex-row-reverse" : ""
                 }`}
               >
                 {/* Skill Card */}
-                <div className="w-full md:w-5/12 bg-[#0b1220] border border-slate-700 rounded-2xl p-6
+                <div className="w-full md:w-5/12 bg-[#0b1220] border border-slate-700 rounded-2xl p-4 sm:p-6
                   hover:scale-105 transition duration-300
                   hover:shadow-[0_0_30px_rgba(59,130,246,0.4)]"
                 >
-                  <div className="flex items-center gap-4">
-                    <div className="text-3xl">{skill.icon}</div>
-                    <h3 className="text-xl font-semibold text-white">
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className="text-2xl sm:text-3xl">{skill.icon}</div>
+                    <h3 className="text-lg sm:text-xl font-semibold text-white">
                       {skill.name}
                     </h3>
                   </div>
 
                   {/* Progress Bar */}
-                  <div className="mt-4">
+                  <div className="mt-3 sm:mt-4">
                     <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
                       <div
                         className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-700"

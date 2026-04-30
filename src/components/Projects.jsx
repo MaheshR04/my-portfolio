@@ -1,6 +1,8 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 export default function Projects() {
+  const prefersReducedMotion = useReducedMotion();
+
   const projects = [
     {
       title: "Poultry Operations Management Dashboard ",
@@ -28,9 +30,14 @@ export default function Projects() {
     },
   ];
 
+  // Detect touch device for disabling hover scale
+  const isTouchDevice =
+    typeof window !== "undefined" &&
+    ("ontouchstart" in window || navigator.maxTouchPoints > 0);
+
   return (
-    <section id="projects" className="min-h-screen bg-[#030712] py-28">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="projects" className="min-h-screen bg-[#030712] py-16 sm:py-28">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
 
         {/* Heading */}
         <motion.h2
@@ -38,17 +45,17 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold text-center text-blue-400"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-blue-400"
         >
           Projects
         </motion.h2>
 
-        <p className="text-center text-gray-400 mt-4 max-w-2xl mx-auto">
-          Some of the projects I’ve worked on using modern technologies.
+        <p className="text-center text-gray-400 mt-3 sm:mt-4 max-w-2xl mx-auto text-sm sm:text-base">
+          Some of the projects I've worked on using modern technologies.
         </p>
 
         {/* Project Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-20 overflow-visible">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mt-12 sm:mt-20">
 
           {projects.map((project, index) => (
             <motion.div
@@ -58,11 +65,12 @@ export default function Projects() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
 
-              /* 🔥 REAL forward hover */
-              whileHover={{
-                scale: 1.25,
-                y: -12,
-              }}
+              /* Gentle hover on desktop, no scale on touch devices */
+              whileHover={
+                isTouchDevice || prefersReducedMotion
+                  ? {}
+                  : { scale: 1.05, y: -8 }
+              }
 
               className="
                 relative
@@ -70,13 +78,13 @@ export default function Projects() {
                 transform-gpu
                 bg-[#0b1220]
                 border border-slate-700
-                rounded-2xl p-6
+                rounded-2xl p-4 sm:p-6
                 transition-all duration-300 ease-out
                 hover:border-blue-500
-                hover:shadow-[0_25px_80px_rgba(59,130,246,0.45)]
+                hover:shadow-[0_15px_50px_rgba(59,130,246,0.35)]
               "
             >
-              <h3 className="text-xl font-semibold text-white">
+              <h3 className="text-lg sm:text-xl font-semibold text-white">
                 {project.title}
               </h3>
 
@@ -88,7 +96,7 @@ export default function Projects() {
                 {project.tech}
               </p>
 
-              <div className="flex gap-4 mt-6">
+              <div className="flex gap-3 sm:gap-4 mt-5 sm:mt-6 flex-wrap">
                 <a
                   href={project.github}
                   className="px-4 py-2 text-sm rounded-full border border-slate-600 text-white hover:border-white transition"
