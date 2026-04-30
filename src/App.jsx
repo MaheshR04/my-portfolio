@@ -7,14 +7,14 @@ import Contact from "./components/Contact";
 
 function App() {
   return (
-    <>
+    <main className="overflow-x-hidden w-full relative">
       <Navbar />
       <Hero />
       <Skills />
       <Projects />
       <Experience /> 
       <Contact />
-    </>
+    </main>
   );
 }
 
