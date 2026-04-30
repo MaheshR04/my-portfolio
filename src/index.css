@@ -11,6 +11,8 @@ html {
 
 body {
   overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
 }
 
 /* ── Hamburger animation ── */
