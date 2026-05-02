@@ -21,6 +21,14 @@ export default function Projects() {
       live: "#",
     },
     {
+      title: "PDF Merge & Converter",
+      description:
+        "A utility tool that allows users to seamlessly merge multiple PDF documents into a single file and convert PDFs to Word format. Built with focus on fast processing and accuracy.",
+      tech: "React, Python, Tailwind CSS",
+      github: "",
+      live: "https://marge-pdf.vercel.app/",
+    },
+    {
       title: "Portfolio ",
       description:
         "A modern responsive portfolio website to showcase skills and projects.",
@@ -97,19 +105,27 @@ export default function Projects() {
               </p>
 
               <div className="flex gap-3 sm:gap-4 mt-5 sm:mt-6 flex-wrap">
-                <a
-                  href={project.github}
-                  className="px-4 py-2 text-sm rounded-full border border-slate-600 text-white hover:border-white transition"
-                >
-                  GitHub
-                </a>
+                {project.github && project.github !== "#" && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 text-sm rounded-full border border-slate-600 text-white hover:border-white transition"
+                  >
+                    GitHub
+                  </a>
+                )}
 
-                <a
-                  href={project.live}
-                  className="px-4 py-2 text-sm rounded-full bg-blue-500 hover:bg-blue-600 transition text-white"
-                >
-                  Live Demo
-                </a>
+                {project.live && project.live !== "#" && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 text-sm rounded-full bg-blue-500 hover:bg-blue-600 transition text-white"
+                  >
+                    Live Demo
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}

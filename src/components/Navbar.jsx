@@ -48,20 +48,17 @@ export default function Navbar() {
         </button>
 
         {/* DESKTOP MENU — hidden on small screens */}
-        <div className="hidden md:flex items-center gap-4">
-          <ul className="flex gap-4">
-            {menu.map((item, i) => (
+        <div className="hidden md:flex items-center gap-6">
+          <ul className="flex gap-6">
+            {menu.map((item) => (
               <li key={item}>
                 <a
                   href={`#${item.toLowerCase()}`}
-                  className={`
-                    ${colors[i]}
-                    px-4 py-2 rounded-full
-                    text-white text-sm font-semibold
-                    flex items-center justify-center
-                    hover:scale-110 hover:shadow-lg
-                    transition duration-300
-                  `}
+                  className="
+                    text-gray-300 text-sm font-medium
+                    hover:text-blue-400
+                    transition-colors duration-300
+                  "
                 >
                   {item}
                 </a>
@@ -78,13 +75,13 @@ export default function Navbar() {
               ml-2
               px-5 py-2
               rounded-full
-              bg-blue-500
-              hover:bg-blue-600
+              bg-blue-600
+              hover:bg-blue-500
               text-white
               text-sm
               font-semibold
-              transition
-              hover:scale-110 hover:shadow-lg
+              transition-all
+              hover:shadow-[0_0_15px_rgba(59,130,246,0.5)]
             "
           >
             See Resume
@@ -94,8 +91,8 @@ export default function Navbar() {
         {/* MOBILE MENU OVERLAY */}
         <div
           className={`
-            fixed inset-0 bg-black/95 backdrop-blur-lg z-40
-            flex flex-col items-center justify-center gap-6
+            fixed inset-0 bg-[#030712]/95 backdrop-blur-md z-40
+            flex flex-col items-center justify-center gap-8
             transition-all duration-300 md:hidden
             ${isOpen
               ? "opacity-100 pointer-events-auto"
@@ -103,20 +100,17 @@ export default function Navbar() {
             }
           `}
         >
-          <ul className="flex flex-col items-center gap-5">
-            {menu.map((item, i) => (
+          <ul className="flex flex-col items-center gap-6">
+            {menu.map((item) => (
               <li key={item}>
                 <a
                   href={`#${item.toLowerCase()}`}
                   onClick={() => setIsOpen(false)}
-                  className={`
-                    ${colors[i]}
-                    px-8 py-3 rounded-full
-                    text-white text-lg font-semibold
-                    flex items-center justify-center
-                    hover:scale-105
-                    transition duration-300
-                  `}
+                  className="
+                    text-gray-300 text-2xl font-medium
+                    hover:text-blue-400
+                    transition-colors duration-300
+                  "
                 >
                   {item}
                 </a>
@@ -133,12 +127,13 @@ export default function Navbar() {
               mt-4
               px-8 py-3
               rounded-full
-              bg-blue-500
-              hover:bg-blue-600
+              bg-blue-600
+              hover:bg-blue-500
               text-white
               text-lg
               font-semibold
-              transition
+              transition-all
+              hover:shadow-[0_0_15px_rgba(59,130,246,0.5)]
             "
           >
             See Resume
