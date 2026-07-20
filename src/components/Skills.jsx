@@ -1,24 +1,66 @@
 
 import {
+  FaJava,
+  FaPython,
+  FaJs,
   FaReact,
   FaHtml5,
-  FaCss3Alt,
-  FaJs,
   FaGitAlt,
+  FaGithub,
+  FaDatabase,
+  FaDocker,
+  FaNodeJs,
+  FaCheckCircle,
 } from "react-icons/fa";
-import { SiTailwindcss, SiFirebase, SiVercel } from "react-icons/si";
+import {
+  SiTailwindcss,
+  SiMongodb,
+  SiExpress,
+  SiFastapi,
+} from "react-icons/si";
 import { motion } from "framer-motion";
 
 export default function Skills() {
-  const skills = [
-    { name: "HTML", level: 90, icon: <FaHtml5 className="text-orange-500" /> },
-    { name: "CSS", level: 85, icon: <FaCss3Alt className="text-blue-500" /> },
-    { name: "JavaScript", level: 80, icon: <FaJs className="text-yellow-400" /> },
-    { name: "React", level: 85, icon: <FaReact className="text-cyan-400" /> },
-    { name: "Tailwind", level: 90, icon: <SiTailwindcss className="text-sky-400" /> },
-    { name: "Firebase", level: 75, icon: <SiFirebase className="text-amber-400" /> },
-    { name: "Git", level: 70, icon: <FaGitAlt className="text-red-500" /> },
-    { name: "Vercel", level: 70, icon: <SiVercel className="text-white" /> },
+  const skillCategories = [
+    {
+      category: "Languages",
+      skills: [
+        { name: "Java", icon: <FaJava className="text-orange-600" /> },
+        { name: "Python", icon: <FaPython className="text-yellow-400" /> },
+        { name: "JavaScript", icon: <FaJs className="text-yellow-300" /> },
+      ],
+    },
+    {
+      category: "Web Technologies",
+      skills: [
+        { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
+        { name: "Tailwind CSS", icon: <SiTailwindcss className="text-sky-400" /> },
+        { name: "React.js", icon: <FaReact className="text-cyan-400" /> },
+        { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
+        { name: "Express.js", icon: <SiExpress className="text-gray-300" /> },
+      ],
+    },
+    {
+      category: "Databases & Tools",
+      skills: [
+        { name: "SQL", icon: <FaDatabase className="text-blue-400" /> },
+        { name: "MongoDB", icon: <SiMongodb className="text-green-400" /> },
+        { name: "FastAPI / RAG", icon: <SiFastapi className="text-teal-400" /> },
+        { name: "Docker", icon: <FaDocker className="text-blue-500" /> },
+        { name: "Git", icon: <FaGitAlt className="text-red-500" /> },
+        { name: "GitHub", icon: <FaGithub className="text-white" /> },
+      ],
+    },
+    {
+      category: "Soft Skills",
+      skills: [
+        { name: "Problem Solving", icon: <FaCheckCircle className="text-emerald-400" /> },
+        { name: "Leadership", icon: <FaCheckCircle className="text-purple-400" /> },
+        { name: "Time Management", icon: <FaCheckCircle className="text-blue-400" /> },
+        { name: "Teamwork", icon: <FaCheckCircle className="text-pink-400" /> },
+        { name: "Quick Learner", icon: <FaCheckCircle className="text-yellow-400" /> },
+      ],
+    },
   ];
 
   return (
@@ -29,59 +71,51 @@ export default function Skills() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
 
         {/* Heading */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-blue-400">
-          Skills
-        </h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-blue-400"
+        >
+          Skills & Expertise
+        </motion.h2>
+
         <p className="text-center text-gray-400 mt-3 sm:mt-4 max-w-2xl mx-auto text-sm sm:text-base">
-          Technologies I use to build fast, scalable, and modern web applications.
+          Core technical competencies and soft skills highlighted in my professional resume.
         </p>
 
-        {/* Timeline */}
-        <div className="relative mt-12 sm:mt-20">
-          {/* Vertical Line */}
-          <div className="hidden md:block absolute left-1/2 top-0 h-full w-[2px] bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500"></div>
+        {/* Categories Grid */}
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mt-12 sm:mt-16">
+          {skillCategories.map((cat, idx) => (
+            <motion.div
+              key={cat.category}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="bg-[#0b1220] border border-slate-700 rounded-2xl p-6 hover:border-blue-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] transition duration-300"
+            >
+              <h3 className="text-xl font-bold text-white mb-6 border-b border-slate-700/60 pb-3 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+                {cat.category}
+              </h3>
 
-          <div className="space-y-8 sm:space-y-12">
-            {skills.map((skill, index) => (
-              <div
-                key={skill.name}
-                className={`flex flex-col md:flex-row items-center gap-4 sm:gap-6 ${
-                  index % 2 === 0 ? "md:flex-row-reverse" : ""
-                }`}
-              >
-                {/* Skill Card */}
-                <div className="w-full md:w-5/12 bg-[#0b1220] border border-slate-700 rounded-2xl p-4 sm:p-6
-                  hover:scale-105 transition duration-300
-                  hover:shadow-[0_0_30px_rgba(59,130,246,0.4)]"
-                >
-                  <div className="flex items-center gap-3 sm:gap-4">
-                    <div className="text-2xl sm:text-3xl">{skill.icon}</div>
-                    <h3 className="text-lg sm:text-xl font-semibold text-white">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {cat.skills.map((skill) => (
+                  <div
+                    key={skill.name}
+                    className="flex items-center gap-3 bg-[#050b18] border border-slate-800 rounded-xl p-3 hover:border-slate-600 transition"
+                  >
+                    <div className="text-2xl">{skill.icon}</div>
+                    <span className="text-sm font-medium text-gray-200">
                       {skill.name}
-                    </h3>
+                    </span>
                   </div>
-
-                  {/* Progress Bar */}
-                  <div className="mt-3 sm:mt-4">
-                    <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-700"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                    <p className="text-right text-sm text-gray-400 mt-1">
-                      {skill.level}%
-                    </p>
-                  </div>
-                </div>
-
-                {/* Timeline Dot */}
-                <div className="hidden md:flex w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 items-center justify-center shadow-lg">
-                  <div className="w-4 h-4 bg-[#020617] rounded-full"></div>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </motion.div>
+          ))}
         </div>
 
       </div>

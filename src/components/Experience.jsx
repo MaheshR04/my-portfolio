@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 export default function Experience() {
   const experiences = [
     {
-      role: "Full Stack Developer Intern",
-      company: "Kacklewalls Nutrition Pvt Ltd",
-      duration: "4 Months – Present",
+      role: "Full Stack Developer",
+      company: "Kacklewalls Nutrition Pvt Ltd Online",
+      duration: "4 Months",
       points: [
-        "Web Application Development: Built and maintained a scalable web application using React.js and JavaScript",
-        "Backend & Database Management: Developed RESTful APIs and integrated Firebase for authentication, storage, and real-time database functionalities",
-        "Deployment: Deployed applications using Vercel, ensuring smooth workflows via GitHub",
+        "Web Application Development: Built and maintained a scalable web application using React.js and JavaScript.",
+        "Backend Database Management: Developed RESTful APIs and integrated Firebase for authentication, storage, and real-time database functionalities.",
+        "Deployment: Deployed applications using Vercel, ensuring smooth workflows via GitHub.",
       ],
     },
   ];
@@ -26,11 +26,11 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
           className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-blue-400"
         >
-          Experience
+          Work Experience
         </motion.h2>
 
         <p className="text-center text-gray-400 mt-3 text-base sm:text-lg max-w-3xl mx-auto">
-          My professional journey and hands-on project experience.
+          My professional industry experience and technical achievements.
         </p>
 
         {/* Timeline */}
@@ -61,8 +61,8 @@ export default function Experience() {
                   {exp.role}
                 </h3>
 
-                <p className="text-sm sm:text-base text-blue-400 mt-2">
-                  {exp.company} • {exp.duration}
+                <p className="text-sm sm:text-base text-blue-400 mt-2 font-medium">
+                  {exp.company} • <span className="text-gray-300">{exp.duration}</span>
                 </p>
 
                 <ul className="mt-4 sm:mt-6 text-sm sm:text-base text-gray-300 list-disc list-outside pl-4 space-y-2 sm:space-y-3">

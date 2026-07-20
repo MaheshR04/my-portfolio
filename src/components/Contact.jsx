@@ -13,11 +13,11 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-blue-400"
         >
-          Contact
+          Contact Me
         </motion.h2>
 
         <p className="text-center text-gray-400 mt-3 sm:mt-4 text-base sm:text-lg max-w-2xl mx-auto">
-          Feel free to reach out for opportunities, collaborations, or just to connect.
+          Feel free to reach out for software engineering opportunities, collaborations, or connections.
         </p>
 
         {/* Contact Card */}
@@ -42,19 +42,21 @@ export default function Contact() {
           <div className="space-y-4 sm:space-y-6 text-gray-300 text-base sm:text-lg">
 
             {/* EMAIL */}
-            <p className="break-all sm:break-normal">
-              📧{" "}
+            <p className="break-all sm:break-normal flex items-center gap-3">
+              <span className="text-xl">📧</span>
+              <span className="font-semibold text-gray-400 min-w-[80px]">Email:</span>
               <a
                 href="mailto:rathodmahesh5605@gmail.com"
-                className="text-white hover:text-blue-400 transition"
+                className="text-white hover:text-blue-400 transition underline underline-offset-4 decoration-blue-500/50"
               >
                 rathodmahesh5605@gmail.com
               </a>
             </p>
 
             {/* PHONE */}
-            <p>
-              📞{" "}
+            <p className="flex items-center gap-3">
+              <span className="text-xl">📞</span>
+              <span className="font-semibold text-gray-400 min-w-[80px]">Mobile:</span>
               <a
                 href="tel:9380654453"
                 className="text-white hover:text-blue-400 transition"
@@ -63,29 +65,45 @@ export default function Contact() {
               </a>
             </p>
 
+            {/* WEBSITE */}
+            <p className="break-all sm:break-normal flex items-center gap-3">
+              <span className="text-xl">🌐</span>
+              <span className="font-semibold text-gray-400 min-w-[80px]">Portfolio:</span>
+              <a
+                href="https://maheshrathod-phi.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-blue-400 transition underline underline-offset-4 decoration-blue-500/50"
+              >
+                maheshrathod-phi.vercel.app
+              </a>
+            </p>
+
             {/* GITHUB */}
-            <p className="break-all sm:break-normal">
-              🐙{" "}
+            <p className="break-all sm:break-normal flex items-center gap-3">
+              <span className="text-xl">🐙</span>
+              <span className="font-semibold text-gray-400 min-w-[80px]">GitHub:</span>
               <a
                 href="https://github.com/MaheshR04"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-blue-400 transition"
+                className="text-white hover:text-blue-400 transition underline underline-offset-4 decoration-blue-500/50"
               >
                 github.com/MaheshR04
               </a>
             </p>
 
             {/* LINKEDIN */}
-            <p className="break-all sm:break-normal">
-              💼{" "}
+            <p className="break-all sm:break-normal flex items-center gap-3">
+              <span className="text-xl">💼</span>
+              <span className="font-semibold text-gray-400 min-w-[80px]">LinkedIn:</span>
               <a
-                href="https://www.linkedin.com/in/MaheshRathod04"
+                href="https://www.linkedin.com/in/mahesh-rathod565?utm_source=share_via&utm_content=profile&utm_medium=member_android"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-blue-400 transition"
+                className="text-white hover:text-blue-400 transition underline underline-offset-4 decoration-blue-500/50"
               >
-                linkedin.com/in/MaheshRathod04
+                linkedin.com/in/mahesh-rathod565
               </a>
             </p>
 

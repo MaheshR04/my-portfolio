@@ -12,27 +12,24 @@ export default function Hero() {
         <div className="order-2 md:order-1">
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">
             <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-              Heyyyy..... 
+              Welcome to my portfolio!
             </span>
-            <br />
-            <span className="text-blue-400">Wel Come</span>
           </h1>
 
-          <p className="mt-4 text-lg sm:text-xl text-white">
-            I'm <span className="font-semibold">Mahesh Rathod</span>
+          <p className="mt-4 text-lg sm:text-xl text-white font-semibold">
+            Full-Stack Developer & AI Solutions Enthusiast
           </p>
 
-          <p className="mt-4 text-base sm:text-lg font-medium text-gray-300 max-w-lg">
-            Frontend / Full Stack Developer with a passion for building modern,
-            scalable, and user-friendly web applications using React, Tailwind
-            CSS, and Firebase.
+          <p className="mt-4 text-base sm:text-lg font-medium text-gray-300 max-w-lg leading-relaxed">
+            Passionate about building scalable, high-performance web applications and enterprise AI microservices using MERN Stack, Python FastAPI, Docker, and cutting-edge LLMs.
           </p>
 
           {/* BUTTONS */}
           <div className="mt-6 sm:mt-8 flex gap-3 sm:gap-4 flex-wrap">
             <a
               href="/Resume.pdf"
-              download
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-pink-500 to-orange-400 hover:scale-105 transition text-white font-semibold shadow-lg text-sm sm:text-base"
             >
               Get Resume
@@ -41,14 +38,16 @@ export default function Hero() {
             <a
               href="https://github.com/MaheshR04"
               target="_blank"
+              rel="noopener noreferrer"
               className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-[#0b1220] border border-slate-700 hover:border-white transition text-white font-semibold text-sm sm:text-base"
             >
               GitHub
             </a>
 
             <a
-              href="https://linkedin.com/"
+              href="https://www.linkedin.com/in/mahesh-rathod565?utm_source=share_via&utm_content=profile&utm_medium=member_android"
               target="_blank"
+              rel="noopener noreferrer"
               className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-blue-500 hover:bg-blue-600 transition text-white font-semibold text-sm sm:text-base"
             >
               LinkedIn
@@ -72,18 +71,14 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* ABOUT ME TITLE (SAME STYLE AS HEYYY) */}
+          {/* ABOUT ME TITLE */}
           <h2 className="mt-6 sm:mt-8 text-3xl sm:text-4xl md:text-5xl font-extrabold text-blue-400 text-center">
-            About Mee
+            Mahesh Rathod
           </h2>
 
           {/* ABOUT ME CONTENT */}
           <p className="mt-3 sm:mt-4 text-center text-base sm:text-lg text-gray-300 max-w-lg leading-relaxed px-2">
-            I am a Computer Science Engineering student at New Horizon College of
-            Engineering, Bengaluru (2023–2027). I specialize in building responsive
-            and user-friendly web applications using React.js and Tailwind CSS.
-            I have hands-on experience with Firebase, REST APIs, and deployment
-            using Vercel.
+            Currently pursuing my <span className="text-white font-semibold">Bachelor of Engineering in Computer Science and Engineering (2023–2027)</span> at <span className="text-blue-300">New Horizon College of Engineering, Bengaluru</span>. I have hands-on experience building production-grade full-stack applications, AI microservices with RAG, and cloud-deployed web systems.
           </p>
 
         </div>
